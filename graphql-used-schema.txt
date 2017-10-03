@@ -1,0 +1,1 @@
+https://www.graphqlbin.com/hn-relay.graphql
