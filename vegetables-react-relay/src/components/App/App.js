@@ -1,15 +1,35 @@
 import React, { Component } from 'react'
+import { 
+  Switch,
+  Route
+}                           from 'react-router-dom'
 
-//import LinkListPage       from '../LinkListPage/LinkListPage'
+import LinkListPage         from '../LinkListPage/LinkListPage'
 import CreateLink           from '../CreateLink/CreateLink'  
+import Header               from '../Header/Header'
 
 
 class App extends Component {
 
   render() {
     return (
-      //<LinkListPage />
-      <CreateLink />
+      <div className='center w85'>
+        <Header />
+        <div className='ph3 pv1 background-gray'>
+          <Switch>
+            <Route 
+              exact 
+              path='/' 
+              component={ LinkListPage }
+            />
+            <Route 
+              exact 
+              path='/create-link' 
+              component={ CreateLink }
+            />
+          </Switch>  
+        </div>
+      </div>
     )
   }
   
