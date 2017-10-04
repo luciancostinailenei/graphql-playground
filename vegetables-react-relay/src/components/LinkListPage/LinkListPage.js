@@ -1,5 +1,8 @@
-// QueryRenderer - higher-order component that takes care of composing the actual query, fetching the data and calling the render callback with the data
-// QueryRenderer is the root of the Relay tree
+/*
+ * QueryRenderer - higher-order component that takes care of composing the actual query, 
+   fetching the data and calling the render callback with the data
+ * QueryRenderer is the root of the Relay tree
+ */
 
 import React, { Component } from 'react'
 
@@ -8,9 +11,9 @@ import {
     graphql
 }                           from 'react-relay'
 
-import environment from '../../Environment'
+import environment          from '../../Environment'
 
-import LinkList from '../LinkList/LinkList'
+import LinkList             from '../LinkList/LinkList'
 
 const LinkListPageQuery = graphql`
     query LinkListPageQuery {
@@ -27,15 +30,17 @@ class LinkListPage extends Component {
             <QueryRenderer
                 environment={ environment }
                 query={ LinkListPageQuery }
-                render={ ({ error, props }) => {
-                    if (error) {
-                        return <div>{ error.message }</div>
-                    } else if (props) {
-                        return <LinkList viewer={ props.viewer } />
-                    }
+                render={ 
+                    ({ error, props }) => {
+                        if (error) {
+                            return <div>{ error.message }</div>
+                        } else if (props) {
+                            return <LinkList viewer={ props.viewer } />
+                        }
 
-                    return <div>Loading</div>
-                } }
+                        return <div>Loading</div>
+                    } 
+                }
             />
         )
     }
