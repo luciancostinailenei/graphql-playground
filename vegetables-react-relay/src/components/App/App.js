@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-import LinkList from '../LinkList/LinkList'
+import LinkListPage from '../LinkListPage/LinkListPage'
 
 class App extends Component {
   render() {
     return (
-      <LinkList />
+      <LinkListPage />
     )
   }
 }
