@@ -7,6 +7,7 @@ import {
 import LinkListPage         from '../LinkListPage/LinkListPage'
 import CreateLink           from '../CreateLink/CreateLink'  
 import Header               from '../Header/Header'
+import Login                from '../Login/Login'
 
 
 class App extends Component {
@@ -24,9 +25,15 @@ class App extends Component {
             />
             <Route 
               exact 
-              path='/create-link' 
+              path='/create' 
               component={ CreateLink }
             />
+            <Route
+              exact
+              path='/login'
+              component={ Login }
+            />
+            
           </Switch>  
         </div>
       </div>
