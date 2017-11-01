@@ -23,7 +23,7 @@ class Header extends Component {
                 
                 { 
                     userId && 
-                    <div className='flex'>
+                    <div className='flex' >
                         <div className='ml1'> | </div>
                         <Link 
                             to='/create' 
@@ -41,8 +41,8 @@ class Header extends Component {
                                 localStorage.removeItem(GC_USER_ID)
                                 localStorage.removeItem(GC_AUTH_TOKEN)
                                 this.props.history.push(`/`)
-                            }}>logout</div>
-                            :
+                            }}>logout</div> 
+                               :
                             <Link 
                                 to='/login' 
                                 className='ml1 no-underline black'>

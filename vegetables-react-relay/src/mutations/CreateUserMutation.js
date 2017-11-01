@@ -1,5 +1,5 @@
 import {
-    CommitMutation,
+    commitMutation,
     graphql
 }                   from 'react-relay'
 
@@ -44,7 +44,7 @@ export default (name, email, password, callback) => {
         }
     }
 
-    CommitMutation(
+    commitMutation(
         environment,
         {
             mutation,

@@ -31,11 +31,11 @@ class LinkListPage extends Component {
                 environment={ environment }
                 query={ LinkListPageQuery }
                 render={ 
-                    ({ error, props }) => {
+                    ({error, props}) => {
                         if (error) {
                             return <div>{ error.message }</div>
                         } else if (props) {
-                            return <LinkList viewer={ props.viewer } />
+                            return <LinkList viewer={ props.viewer }/>
                         }
 
                         return <div>Loading</div>
