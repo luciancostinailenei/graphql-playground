@@ -20,7 +20,11 @@ class LinkList extends Component {
                 <div>
                 { 
                     this.props.viewer.allLinks.edges.map(({ node }, index) => (
-                        <Link key={ node.__id } index={ index } link={ node }/>
+                        <Link 
+                            key={ node.__id } 
+                            index={ index } 
+                            link={ node }
+                        />
                     )) 
                 }
                 </div>

@@ -47,9 +47,26 @@ class Link extends Component {
             return
         }
 
+        if (!this._userCanVoteForLink(userId)) {
+            alert('You have already voted for this link !')
+            return
+        }
+
         const linkId = this.props.link.id
 
         CreateVoteMutation(userId, linkId) 
+    }
+
+    _userCanVoteForLink(userId) {
+        const usersIdsWhichVotedForLink = this.props.link.votes.edges.map((edge) => {
+            return edge.node.user.id
+        })
+
+        const userHasVotedForLink = usersIdsWhichVotedForLink.find((id) => {
+            return userId === id
+        })
+
+        return !userHasVotedForLink
     }
 }
 
@@ -66,6 +83,13 @@ export default createFragmentContainer(Link, graphql`
         }
         votes {
             count
+            edges {
+                node {
+                    user {
+                        id
+                    }
+                }
+            }
         }
     }
 `)
