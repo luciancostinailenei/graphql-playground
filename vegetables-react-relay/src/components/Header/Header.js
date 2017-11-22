@@ -4,53 +4,48 @@ import { withRouter }                from 'react-router'
 
 import { GC_USER_ID, GC_AUTH_TOKEN } from '../../constants'
 
+import                                    './Header.css'
+
 class Header extends Component {
 
     render() {  
         const userId = localStorage.getItem(GC_USER_ID)
 
         return (
-        <div className='flex pa1 justify-between nowrap orange'>
-            <div className='flex flex-fixed black'>
-                <div className='fw7 mr1'>Links</div>
-                {/* this is the Link component from react-router-dom */}
-                <Link 
-                    to='/' 
-                    className='ml1 no-underline black'
-                >
-                    new
-                </Link>
-                
+        <div className='Header flex pa1 justify-between nowrap levi9blue'>
+            {/* this is the Link component from react-router-dom */}
+            <Link 
+                to='/' 
+                className='fw7 Header__action-link ml1 no-underline white'
+            >
+                Cool Tech Links
+            </Link>
+
+            <div className='Header__action-links'>
                 { 
                     userId && 
-                    <div className='flex' >
-                        <div className='ml1'> | </div>
-                        <Link 
-                            to='/create' 
-                            className='ml1 no-underline black'
-                        >
-                            submit
-                        </Link>
-                    </div>
+                    <Link 
+                        to='/create' 
+                        className='Header__action-link no-underline white'
+                    >
+                        submit
+                    </Link>
                 }
 
-                <div className='flex flex-fixed'>
-                    {
-                        userId ?
-                            <div className='ml1 pointer black' onClick={() => {
-                                localStorage.removeItem(GC_USER_ID)
-                                localStorage.removeItem(GC_AUTH_TOKEN)
-                                this.props.history.push(`/`)
-                            }}>logout</div> 
-                               :
-                            <Link 
-                                to='/login' 
-                                className='ml1 no-underline black'>
-                                login
-                            </Link>
-                    }
-                </div>
-
+                {
+                    userId ?
+                        <a className='pointer white' onClick={() => {
+                            localStorage.removeItem(GC_USER_ID)
+                            localStorage.removeItem(GC_AUTH_TOKEN)
+                            this.props.history.push(`/`)
+                        }}>logout</a> 
+                        :
+                        <Link 
+                            to='/login' 
+                            className='ml1 no-underline white'>
+                            login
+                        </Link>
+                }
             </div>
         </div>
         )   

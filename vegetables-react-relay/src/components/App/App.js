@@ -9,14 +9,15 @@ import CreateLink           from '../CreateLink/CreateLink'
 import Header               from '../Header/Header'
 import Login                from '../Login/Login'
 
+import                           './App.css';
 
 class App extends Component {
 
   render() {
     return (
-      <div className='center w85'>
+      <div className='App center w85'>
         <Header />
-        <div className='ph3 pv1 background-gray'>
+        <div className='App__main-content background-gray'>
           <Switch>
             <Route 
               exact 
@@ -33,7 +34,6 @@ class App extends Component {
               path='/login'
               component={ Login }
             />
-            
           </Switch>  
         </div>
       </div>

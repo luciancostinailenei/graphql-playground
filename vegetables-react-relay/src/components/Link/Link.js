@@ -11,12 +11,14 @@ import { timeDifferenceForDate } from '../../utils'
 
 import CreateVoteMutation        from '../../mutations/CreateVoteMutation'
 
+import                                './Link.css'
+
 class Link extends Component {
     render() {
         const userId = localStorage.getItem(GC_USER_ID)
 
         return (
-            <div className='flex mt2 items-start'>
+            <div className='Link flex mt2 items-start'>
                 <div className='flex items-center'>
                     <span className='gray'>{ this.props.index + 1 }.</span>
                     { 
@@ -31,9 +33,9 @@ class Link extends Component {
                 </div>
 
                 <div className='ml1'>
-                    <div>{ this.props.link.description } ({ this.props.link.url })</div>
+                    <div className="Link__title">{ this.props.link.description } ({ this.props.link.url })</div>
                     <div className='f6 lh-copy gray'> 
-                        { this.props.link.votes.count } votes | by <b>{ this.props.link.postedBy ? this.props.link.postedBy.name : 'Unknown' }</b> { timeDifferenceForDate(this.props.link.createdAt) } 
+                        <span className="Link__votes-number">{ this.props.link.votes.count }</span> votes | by <b>{ this.props.link.postedBy ? this.props.link.postedBy.name : 'Unknown' }</b> { timeDifferenceForDate(this.props.link.createdAt) } 
                     </div>        
                 </div>
             </div>

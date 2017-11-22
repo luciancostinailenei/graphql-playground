@@ -1,0 +1,15 @@
+.Header {
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 15px;
+}
+
+    .Header__action-links { }
+
+    .Header__action-link {
+        float: left;
+        margin-right: 10px;
+    }

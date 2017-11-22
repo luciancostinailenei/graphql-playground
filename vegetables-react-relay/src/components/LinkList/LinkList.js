@@ -28,9 +28,9 @@ class LinkList extends Component {
                     )) 
                 }
                 </div>
-                <div className='flex ml4 mv3 gray'>
+                {/* <div className='flex ml4 mv3 gray'>
                     <div className='pointer' onClick={() => this._loadMore()}>More</div>
-                </div>
+                </div> */}
             </div>
         )
     }

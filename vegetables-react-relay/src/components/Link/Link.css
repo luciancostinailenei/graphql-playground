@@ -1,0 +1,11 @@
+.Link { }
+
+    .Link__title {
+        color: rgb(20,52,160);
+    }
+
+    .Link__votes-number {
+        color: rgb(255,102,8);
+        font-weight: bold;
+        font-style: italic;
+    }
