@@ -34,7 +34,7 @@ export default () => {
             const updatedLink = newVote.getLinkedRecord('link')
             const linkId = updatedLink.getValue('id')
             const newVotes = updatedLink.getLinkedRecord('_votesMeta')
-            const newVotesCount = newVotes.getLinkedRecord('count')
+            const newVotesCount = newVotes.getValue('count')
 
             const link = proxyStore.get(linkId)
             link.getLinkedRecord('votes').setValue(newVotesCount, 'count')

@@ -49,10 +49,10 @@ class Link extends Component {
             return
         }
 
-        if (!this._userCanVoteForLink(userId)) {
-            alert('You have already voted for this link !')
-            return
-        }
+        // if (!this._userCanVoteForLink(userId)) {
+        //     alert('You have already voted for this link !')
+        //     return
+        // }
 
         const linkId = this.props.link.id
 
